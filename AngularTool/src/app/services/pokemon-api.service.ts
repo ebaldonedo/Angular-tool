@@ -7,7 +7,8 @@ import { Pokemon } from '../models/pokemon.model';
   providedIn: 'root'
 })
 export class PokemonApiService {
-  private apiUrl = 'https://pokeapi.co/api/v2';
+  private apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+  private img= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +16,7 @@ export class PokemonApiService {
     return this.http.get<any>(`${this.apiUrl}/pokemon`);
   }
 
-  getPokemonById(id: number): Observable<Pokemon> {
-    return this.http.get<Pokemon>(`${this.apiUrl}/pokemon/${id}`);
+  getPokemonImg(id: number): Observable<any> {
+    return this.http.get<any>(`${this.img}${id}.png`);
   }
 }

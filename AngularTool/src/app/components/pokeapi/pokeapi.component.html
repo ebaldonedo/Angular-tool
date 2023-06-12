@@ -1,5 +1,6 @@
-<ul>
-    <li *ngFor="let pokemon of pokemonArray ">
-      <a routerLink="/pokemon/{{ pokemon.id }}">{{ pokemon.name }}</a>
-    </li>
-  </ul>
+<div class="pokedex">
+    <div *ngFor="let pokemon;  of pokemonArray; index as i ; " class="poke-card" >
+      <img [src]="this.getpokeimgs(i+1)" alt={{i+1}}>
+      <h4> {{capitalizeFirstLetter(pokemon.name)}}   </h4>
+    </div>
+  </div>
