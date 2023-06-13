@@ -2,15 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import {PokemonApiService  } from '../../services/pokemon-api.service';
 import { Pokemon } from '../../models/pokemon.model';
 
+
 @Component({
   selector: 'PokeapiComponent',
   templateUrl: './pokeapi.component.html',
-  styleUrls: ['./pokeapi.component.css']
+  styleUrls: ['./pokeapi.component.css'],
+  
+  
 })
 export class PokeapiComponent implements OnInit {
 //1.-Declaracion de variables
   pokemons: Pokemon[] = [];
   pokemonArray: Pokemon[] = [];
+  pokemonsJhoto: Pokemon[] = [];
+  pokemonArrayJhoto: Pokemon[] = [];
+
+  pokemonsHoenn: Pokemon[] = [];
+  pokemonArrayHoenn: Pokemon[] = [];
+
+
+
   pokedex: []= []
   pokeimg: string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
@@ -20,9 +31,8 @@ export class PokeapiComponent implements OnInit {
 //3.-Llamado de la funcion para consumir api
   ngOnInit(): void {
     this.getPokemons();
-    //this.getPokemon()
-
-
+    this.getJhoto();
+    this.getHoenn();
   }
 
   getpokeimgs(i:any):any{
@@ -38,6 +48,30 @@ export class PokeapiComponent implements OnInit {
         console.log(this.pokemonArray);
       });
   }
+//funcion para llamar a la api de jhoto
+  getJhoto(): void {
+    this.pokemonApi.getJhoto().subscribe(pokemons => {
+        this.pokemonsJhoto = pokemons
+        this.pokemonArrayJhoto = Array.from(pokemons.results);
+        console.log(this.pokemonArrayJhoto);
+      });
+  }
+
+  //funcion para llamar a la api de hoenn
+  getHoenn(): void {
+    this.pokemonApi.getHoenn().subscribe(pokemons => {
+        this.pokemonsHoenn = pokemons
+        this.pokemonArrayHoenn = Array.from(pokemons.results);
+        console.log(this.pokemonArrayHoenn);
+      });
+  }
+
+
+  test(): void {
+    console.log("test");
+    
+      };
+  
 
   //Funcion para mostrar la primera letra de un string en mayuscula
 
@@ -51,12 +85,7 @@ export class PokeapiComponent implements OnInit {
 
 
 
-  getPokemon(): void{
-    this.pokemonApi.getPokemonImg(1).subscribe(poke=>{
-      this.pokeimg= poke
-    })
-
-  }
+  
 }
 
 

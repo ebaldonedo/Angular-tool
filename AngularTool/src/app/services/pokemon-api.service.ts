@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Pokemon } from '../models/pokemon.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonApiService {
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151';
-  private img= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+  private apiJhoto = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=151';
+  private apiHoenn = 'https://pokeapi.co/api/v2/pokemon?limit=135&offset=251';
+  
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +18,13 @@ export class PokemonApiService {
     return this.http.get<any>(`${this.apiUrl}/pokemon`);
   }
 
-  getPokemonImg(id: number): Observable<any> {
-    return this.http.get<any>(`${this.img}${id}.png`);
+  getJhoto(): Observable<any> {
+    return this.http.get<any>(`${this.apiJhoto}/pokemon`);
   }
+
+  getHoenn(): Observable<any> {
+    return this.http.get<any>(`${this.apiHoenn}/pokemon`);
+  }
+
+ 
 }

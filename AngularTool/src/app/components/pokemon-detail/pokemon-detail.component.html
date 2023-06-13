@@ -1,10 +1,9 @@
-<div *ngIf="pokemon">
-    <h2>{{ pokemon.name }}</h2>
-    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
-    <p>Height: {{ pokemon.height }}</p>
-    <p>Weight: {{ pokemon.weight }}</p>
-    <h3>Abilities:</h3>
-    <ul>
-      <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name }}</li>
-    </ul>
-  </div>
+<div class="container">
+  <mat-tab-group class="box">
+    <mat-tab label="First" class="content"> Content 1 </mat-tab>
+    <mat-tab label="Second" class="content"> Content 2 </mat-tab>
+    <mat-tab label="Third" class="content"> Content 3 </mat-tab>
+  </mat-tab-group>
+</div>
+
+
