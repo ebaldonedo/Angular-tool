@@ -19,3 +19,9 @@
   border:1px rgba(0, 0, 0, 0.551) solid;
   border-radius: 18px;
 }
+
+.header{
+  background-color: beige;
+
+  border-radius: 20px 20px 0px 0px;
+}
