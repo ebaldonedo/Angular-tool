@@ -7,8 +7,8 @@ import { Pokemon } from '../../models/pokemon.model';
   selector: 'PokeapiComponent',
   templateUrl: './pokeapi.component.html',
   styleUrls: ['./pokeapi.component.css'],
-  
-  
+
+
 })
 export class PokeapiComponent implements OnInit {
 //1.-Declaracion de variables
@@ -40,7 +40,7 @@ export class PokeapiComponent implements OnInit {
 
   }
 
-//funcion para consumir api
+//funcion para consumir servicio de la api
   getPokemons(): void {
     this.pokemonApi.getPokemons().subscribe(pokemons => {
         this.pokemons = pokemons
@@ -48,7 +48,7 @@ export class PokeapiComponent implements OnInit {
         console.log(this.pokemonArray);
       });
   }
-//funcion para llamar a la api de jhoto
+//funcion para llamar al servicio
   getJhoto(): void {
     this.pokemonApi.getJhoto().subscribe(pokemons => {
         this.pokemonsJhoto = pokemons
@@ -57,7 +57,7 @@ export class PokeapiComponent implements OnInit {
       });
   }
 
-  //funcion para llamar a la api de hoenn
+  //funcion para llamar a al servicio de hoenn
   getHoenn(): void {
     this.pokemonApi.getHoenn().subscribe(pokemons => {
         this.pokemonsHoenn = pokemons
@@ -69,9 +69,9 @@ export class PokeapiComponent implements OnInit {
 
   test(): void {
     console.log("test");
-    
+
       };
-  
+
 
   //Funcion para mostrar la primera letra de un string en mayuscula
 
@@ -85,7 +85,7 @@ export class PokeapiComponent implements OnInit {
 
 
 
-  
+
 }
 
 

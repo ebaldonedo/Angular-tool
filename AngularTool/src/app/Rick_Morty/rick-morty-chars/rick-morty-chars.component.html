@@ -1,0 +1,34 @@
+
+
+<ng-template *ngIf="characters.length<=0" >
+  <h2>There are not characters avaliable</h2>
+
+</ng-template>
+
+<div class="container">
+
+    <mat-card class="example-card card" *ngFor="let char of characters" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image" [ngStyle]=" {
+          'color':'blue',
+          'background-image': 'url('+char.image+')',
+      } " ></div>
+        <mat-card-title> {{char.name}} </mat-card-title>
+        <mat-card-subtitle> {{char.species}} </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>
+          Hi my name is {{char.name}} and I am a {{char.species}}.
+          and im from {{char.location.name}}.
+          and my guesst tha im {{char.status}}.
+        </p>
+      </mat-card-content>
+
+    </mat-card>
+
+
+
+
+</div>
+
