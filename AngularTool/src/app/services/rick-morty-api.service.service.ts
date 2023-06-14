@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RickMortyChar } from '../models/Rick-Morty-char.model';
+import { responseRickMortyApi } from '../models/Rick-Morty-char.model';
 
 
 @Injectable({ providedIn: 'root'
@@ -18,8 +18,8 @@ private apiUrl = 'https://rickandmortyapi.com/api/character';
 
   constructor(private http:HttpClient) {}
 
-  getRickMortyChars(): Observable<RickMortyChar[]> {
-    return this.http.get<RickMortyChar[]>(`${this.apiUrl}`);
+  getRickMortyChars(): Observable<responseRickMortyApi> {
+    return this.http.get<responseRickMortyApi>(`${this.apiUrl}`);
 
   }
 

@@ -4,12 +4,12 @@
 
 <div class="container">
   <mat-tab-group class="box">
-    
-    <mat-tab label="Kanto" class="content"> 
+
+    <mat-tab label="Kanto" class="content">
     <br>
       <h2>Kanto</h2>
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemonArray; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon;  of pokemons; index as i ; " class="poke-card" >
           <img [src]="this.getpokeimgs(i+1)" alt={{i+1}} width="120px">
           <h4>#{{i+1}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>
@@ -20,31 +20,31 @@
     <mat-tab label="Jhoto" class="content"   (click)="getJhoto()">
       <br>
       <h2>Jhoto</h2>
-      
+
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemonArrayJhoto; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon;  of pokemonsJhoto; index as i ; " class="poke-card" >
           <img [src]="this.getpokeimgs(i+152)" alt={{i+151}} width="120px">
           <h4>#{{i+152}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>
       </div>
-      
-    
+
+
     </mat-tab>
     <mat-tab label="Hoenn" class="content">
       <br>
       <h2>Hoenn</h2>
-      
+
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemonArrayHoenn; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon;  of pokemonsHoenn; index as i ; " class="poke-card" >
           <img [src]="this.getpokeimgs(i+252)" alt={{i+151}} width="120px">
           <h4>#{{i+252}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>
-      </div> 
-      
-    
-    
-    
-    
+      </div>
+
+
+
+
+
     </mat-tab>
   </mat-tab-group>
 </div>

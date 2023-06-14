@@ -13,7 +13,7 @@ export class RickMortyCharsComponent {
 
   constructor(private rickMortyApi: RickMortyApiService) { }
 
-data:any = [];
+
 characters: RickMortyChar[] = [];
 
 
@@ -24,14 +24,9 @@ characters: RickMortyChar[] = [];
   }
 
   getChars(): void {
-    this.rickMortyApi.getRickMortyChars().subscribe(characters => {
-        console.log(characters);
-        this.data=characters;
-        console.log(this.data.results);
-        this.characters = this.data.results;
-        console.log(this.characters);
-
-
+                                                      //implicit destructuring
+    this.rickMortyApi.getRickMortyChars().subscribe( ( { results } ) => {
+        this.characters = results;
     }
     );
 
