@@ -1,9 +1,10 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
 .example-card {
   max-width: 400px;
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
 
@@ -15,13 +16,29 @@
   margin-top: 2rem;
 }
 
-.card{
-  border:1px rgba(0, 0, 0, 0.551) solid;
+.card {
+  border: 1px rgba(0, 0, 0, 0.551) solid;
   border-radius: 18px;
 }
 
-.header{
+.header {
   background-color: beige;
 
   border-radius: 20px 20px 0px 0px;
+}
+
+.tittlePokemon {
+  background: -webkit-linear-gradient(90deg, #3c7dd2 10%, #fddf00 90%);
+  -webkit-background-clip: text;
+
+  text-align: center;
+  margin: 0px 32px;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid #80808057;
+  font-weight: 300;
+  font-size: 32px;
+  font-family: "Pokemon Solid", sans-serif;
+
+  letter-spacing: 4px;
+  color: #3c7dd2;
 }

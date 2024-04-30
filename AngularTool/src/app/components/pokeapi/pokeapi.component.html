@@ -1,15 +1,17 @@
 
-<h1 style="text-align: center;">Pokedex</h1>
+
 
 
 <div class="container">
+  <h1 style="text-align: center;" class="tittlePokemon">Pokedex</h1>
   <mat-tab-group class="box">
 
     <mat-tab label="Kanto" class="content">
     <br>
       <h2>Kanto</h2>
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemons; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon;  of pokemons; index as i ; " class="poke-card" 
+        (click)="selectPokemon(pokemon)" >
           <img [src]="this.getpokeimgs(i+1)" alt={{i+1}} width="120px">
           <h4>#{{i+1}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>
@@ -22,7 +24,8 @@
       <h2>Jhoto</h2>
 
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemonsJhoto; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon  of pokemonsJhoto; index as i ; " class="poke-card" 
+        (click)="selectPokemon(pokemon)" >
           <img [src]="this.getpokeimgs(i+152)" alt={{i+151}} width="120px">
           <h4>#{{i+152}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>
@@ -35,7 +38,8 @@
       <h2>Hoenn</h2>
 
       <div class="pokedex">
-        <div *ngFor="let pokemon;  of pokemonsHoenn; index as i ; " class="poke-card" >
+        <div *ngFor="let pokemon;  of pokemonsHoenn; index as i ; " class="poke-card"
+        (click)="selectPokemon(pokemon)" >
           <img [src]="this.getpokeimgs(i+252)" alt={{i+151}} width="120px">
           <h4>#{{i+252}}.- {{capitalizeFirstLetter(pokemon.name)}}   </h4>
         </div>

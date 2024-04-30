@@ -1,32 +1,52 @@
-.pokedex{
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+
+.pokedex {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1rem;
   justify-content: center;
 
   text-align: center;
-
 }
 
-
-.poke-card{
+.poke-card {
   padding: 1rem;
   border: 1px rgb(91, 79, 79) solid;
   border-radius: 16px;
 }
 
-.container{
+.container {
   margin: 2rem;
+
+  border-radius: 8px;
+  border: solid 1px #8080802c;
+  margin-block: 0px;
 }
 
-.box{
+.box {
   margin: 2rem;
   text-align: center;
   padding: 2rem;
 }
 
-.content{
+.content {
   margin: 2rem;
   text-align: center;
   padding: 2rem;
+}
+
+.tittlePokemon {
+  background: -webkit-linear-gradient(90deg, #3c7dd2 10%, #fddf00 90%);
+  -webkit-background-clip: text;
+
+  text-align: center;
+  margin: 0px 32px;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid #80808057;
+  font-weight: 300;
+  font-size: -webkit-xxx-large;
+  font-family: "Pokemon Solid", sans-serif;
+
+  letter-spacing: 4px;
+  color: #ffc800;
 }

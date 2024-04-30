@@ -5,9 +5,11 @@
 
 </ng-template>
 
+<h1 style="text-align: center;" class="tittlePokemon">Rick&Morty's Api</h1>
 <div class="container">
+  
 
-    <mat-card class="example-card card" *ngFor="let char of characters" >
+    <mat-card class="example-card card" *ngFor="let char of characters" (click)="selectChar(char)">
       <mat-card-header class="header">
         <div mat-card-avatar class="example-header-image" [ngStyle]=" {
           'color':'blue',
